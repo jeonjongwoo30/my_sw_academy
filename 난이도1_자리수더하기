@@ -1,0 +1,8 @@
+Num = list(input())
+
+a = 0
+
+for n in range(len(Num)):
+    a += int(Num[n])
+
+print(a)
