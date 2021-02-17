@@ -1,0 +1,13 @@
+T = int(input())
+
+m_list = [31, 28, 31, 30, 31, 30, 31, 31, 30,31,30, 31]
+
+for test_case in range(1, T + 1):
+    ymd = input()
+    y = int(ymd[:4])
+    m = int(ymd[4:6])
+    d = int(ymd[6:])
+    if (1<=m and m<=12 and 1<=d and d<=m_list[m-1]):
+        print("#%d %0.4d/%0.2d/%0.2d"%(test_case,y,m,d))
+    else:
+        print("#%d -1"%(test_case))
