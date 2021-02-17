@@ -1,0 +1,9 @@
+T = input()
+
+a = []
+
+for index in range(len(T)):
+    a.append(T[index:index+1])
+
+for i in range(len(a)):
+    print(ord(a[i])-64, end=' ')
