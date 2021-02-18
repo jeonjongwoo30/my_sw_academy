@@ -1,0 +1,12 @@
+T = int(input())
+
+for test_case in range(T):
+    Num = int(input())
+    ans = 0
+
+    for i in range(1,Num+1):
+        if i%2 == 1:
+            ans += i
+        else:
+            ans -= i
+    print("#%d %d"%(test_case+1,ans))
