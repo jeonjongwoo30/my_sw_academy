@@ -1,0 +1,6 @@
+T = int(input())
+
+
+for n in range(0,T+1):
+    a = T - n
+    print(a, end=" ")
