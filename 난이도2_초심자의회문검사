@@ -1,0 +1,15 @@
+T = int(input())
+
+for test_case in range(T):
+    word = input()
+    check = 0
+    for i in range(len(word)//2):
+        if word[i] != word[-1 -i]:
+            check = 0
+            break
+        else:
+            check = 1
+    if check == 0:
+        print("#%d 0" % (test_case + 1))
+    else:
+        print("#%d 1" % (test_case + 1))
