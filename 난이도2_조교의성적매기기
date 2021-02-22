@@ -1,0 +1,25 @@
+T = int(input())
+
+grade = ["A+","A0","A-","B+","B0","B-","C+","C0","C-","D0"]
+
+for test_case in range(T):
+    num = list(map(int,input().split()))
+    N = num[0]
+    k = num[1]
+
+    score = []
+
+    for student in range(N):
+        t = list(map(int, input().split()))
+        test_score = t[0]*0.35 + t[1]*0.45 + t[2]*0.2
+        score.append(test_score)
+
+        if student+1 == k:
+            k_score = score[student]
+
+    score.sort(reverse=True)
+    # print(score)
+    for i in range(N):
+        if score[i] == k_score:
+            print("#%d"%(test_case+1),grade[i//(N//10)])
+            break
