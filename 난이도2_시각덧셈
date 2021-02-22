@@ -1,0 +1,12 @@
+T = int(input())
+
+for test_case in range(T):
+    a,b,c,d = map(int, input().split())
+    hour = a+c
+    minute = b+d
+    if minute > 59:
+        hour += 1
+        minute = minute -60
+    if hour > 12:
+        hour = hour - 12
+    print("#%d %d %d"%(test_case+1,hour,minute))
