@@ -1,0 +1,24 @@
+T = int(input())
+
+for test_case in range(T):
+    n = int(input())
+    origin = [[] for _ in range(n*2)]
+    idx = 0
+    page = 0
+    for a in range(n):
+
+        compressed_doc = list(map(str,input().split()))
+        alphabet = compressed_doc[0]
+        Num = int(compressed_doc[1])
+
+        for b in range(Num):
+            if idx >= 10:
+                idx =0
+                page += 1
+            origin[page].append(alphabet)
+            idx += 1
+
+    origin = list(filter(None,origin))
+    print("#%d"%(test_case+1))
+    for line in origin:
+        print(''.join(map(str,line)))
