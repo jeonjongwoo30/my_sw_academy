@@ -1,0 +1,5 @@
+from base64 import b64decode
+
+T = int(input())
+for t in range(T):
+    print('#%d'%(t+1), (b64decode(input()).decode("UTF-8")))
