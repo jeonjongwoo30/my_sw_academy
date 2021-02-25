@@ -1,0 +1,27 @@
+T = int(input())
+
+for test_case in range(T):
+    N = int(input())
+    list = [[0]*N for _ in range(N)]
+    num = 0
+    dir = [(0,1),(1,0),(0,-1),(-1,0)]
+    dirIdx = 0
+    x,y = 0,-1
+
+    while num < N*N:
+        temp_x = x + dir[dirIdx][0]
+        temp_y = y + dir[dirIdx][1]
+
+        if temp_x <0 or temp_y<0 or temp_x >=N or temp_y >= N or list[temp_x][temp_y] != 0:
+            dirIdx += 1
+            if dirIdx ==4:
+                dirIdx = 0
+        else:
+            num +=1
+            x,y = temp_x,temp_y
+            list[x][y] = num
+
+
+    print("#%d"%(test_case+1))
+    for line in list:
+        print(' '.join(map(str,line)))
