@@ -1,0 +1,17 @@
+T = int(input())
+
+m_list = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+for test_case in range(T):
+    back_m,back_d,next_m,next_d = map(int, input().split())
+    day = 0
+    if back_m == next_m:
+        day += next_d - back_d +1
+        print("#%d %d"%(test_case+1, day))
+        continue
+    else:
+        day += m_list[back_m-1] - back_d + 1
+        for i in range(back_m,next_m-1):
+            day += m_list[i]
+    day += next_d
+    print("#%d %d"%(test_case+1, day))
