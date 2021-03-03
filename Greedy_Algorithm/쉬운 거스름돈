@@ -1,0 +1,20 @@
+T = int(input())
+m_box = [50000,10000,5000,1000,500,100,50,10]
+
+for test_case in range(T):
+    m_list = [0]*8
+    idx = 0
+    N = input()
+    n = int(N)
+    for i in range(8):
+        k = n//m_box[i]
+        m_list[i] += k
+        try:
+            if n//k >= 1:
+                n = n%m_box[i]
+        except:
+            pass
+    print("#%d"%(test_case+1))
+    for i in range(len(m_list)):
+        print(m_list[i], end=' ')
+    print()
