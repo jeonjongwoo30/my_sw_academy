@@ -1,0 +1,15 @@
+T = int(input())
+
+for test_case in range(T):
+    N = int(input())
+    num = list(map(int,input().split()))
+    count = 0
+    big_n = 0
+
+    for i in range(N-1,-1,-1):
+        idx = num[i]
+        if idx > big_n:
+            big_n = idx
+        count += big_n - idx
+
+    print("#%d %d"%(test_case+1,count))
