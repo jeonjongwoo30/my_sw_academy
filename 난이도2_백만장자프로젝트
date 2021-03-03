@@ -1,0 +1,33 @@
+T = int(input())
+
+for test_case in range(T):
+    N = int(input())
+    num = list(map(int,input().split()))
+
+    box = []
+    count = 0
+    big_n = num[N-1]
+
+
+    for i in range(N-1,0,-1):
+        if num[i] > num[i-1] or num[i] == num[i-1] or num[i-1]<big_n:
+
+            if num[i] > big_n:
+                big_n = num[i]
+                box.append(num[i-1])
+
+            elif num[i] == big_n and num[i] == num[i-1]:
+                continue
+
+            else:
+                box.append(num[i-1])
+
+        else:
+            for z in range(len(box)):
+                count += big_n - box[z]
+            box = []
+
+    for k in range(len(box)):
+        count += big_n - box[k]
+
+    print("#%d %d"%(test_case+1,count))
