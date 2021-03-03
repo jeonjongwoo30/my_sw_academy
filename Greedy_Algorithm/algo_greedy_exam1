@@ -1,1 +1,15 @@
+T = int(input())
 
+for test_case in range(T):
+
+    N,k = map(int,input().split())
+    count = 0
+    n = N
+    while n > 1:
+        if n//k >= 1 and n%k == 0:
+            n = n//k
+            count += 1
+        else:
+            n -= 1
+            count += 1
+    print("#%d %d"%(test_case+1,count))
